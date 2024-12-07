@@ -1,0 +1,27 @@
+  <div class="oj-panel" style="margin: 20px;">
+    <div id="filmStripDiv" style="position: relative; height: 250px;">
+      <oj-film-strip  id="filmStrip" 
+          max-items-per-page="1"
+          arrow-visibility="hidden"
+          aria-label="Set of chemicals" 
+          class="demo-stretch-items"
+          data-oj-context>
+        <oj-bind-for-each data="[[chemicals]]">
+          <template data-oj-as="chemical">
+            <div class="oj-panel oj-panel-alt2 demo-filmstrip-item"
+                 :style.display="[[getItemInitialDisplay(chemical.index)]]">
+              <span><oj-bind-text value="[[chemical.data.name]]"></oj-bind-text></span>
+            </div>
+          </template>
+        </oj-bind-for-each>
+      </oj-film-strip >
+      
+      <div class="demo-overlaid-paging-control">
+        <oj-paging-control id="pagingControl" 
+           data="[[pagingModel]]"
+           page-size="0"
+           page-options='{"type": "dots"}'>
+        </oj-paging-control>
+      </div>
+    </div> <!-- end filmStripDiv -->
+  </div>
