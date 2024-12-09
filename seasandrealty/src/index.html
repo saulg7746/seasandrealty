@@ -67,13 +67,8 @@
          ** on the JET website for more information on how to use this pattern.
       -->
       <header role="banner" class="oj-web-applayout-header">
-        <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
-          <div id="filmstrip-stretchitems-example">
-              <oj-module config="[[ModuleElementUtils.createConfig({name: 'filmStrip/filmStripStretchItems'})]]">
-          </oj-module> </div>
-        </div>
         
-        <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+        <div class=" oj-flex-bar oj-sm-align-items-center">
                   
           
 
@@ -107,7 +102,8 @@
           </oj-tab-bar>
         </div>
       </header>
-      <oj-module role="main" class="oj-web-applayout-max-width oj-web-applayout-content" config="[[moduleAdapter.koObservableConfig]]">
+
+      <oj-module role="main" config="[[moduleAdapter.koObservableConfig]]">
       </oj-module>
       <footer class="oj-web-applayout-footer" role="contentinfo">
         <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">

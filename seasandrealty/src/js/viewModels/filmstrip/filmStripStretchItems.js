@@ -4,13 +4,9 @@ define(['knockout', 'ojs/ojcontext', 'ojs/ojknockout', 'ojs/ojfilmstrip', 'ojs/o
         var ViewModel = function(moduleParams)
         {
           this.pagingModel = ko.observable(null);
-          this.chemicals = [
-              { name: 'Hydrogen' },
-              { name: 'Helium' },
-              { name: 'Lithium' },
-              { name: 'Beryllium' },
-              { name: 'Boron' },
-              { name: 'Carbon' }
+          this.properties = [
+              { name: 'docker_day' },
+              { name: 'lobby2' }
           ];
     
           this.getItemInitialDisplay = function(index)

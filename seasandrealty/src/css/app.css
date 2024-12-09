@@ -54,12 +54,11 @@ html[dir="rtl"] .demo-oracle-icon {
 
 
 /* film strip css */
+
 .demo-filmstrip-item {
-  box-sizing: border-box;
   width: 100%;
   text-align: center;
   font-weight: bold;
-  color: #333;
   font-size: 3rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,4 +79,53 @@ html[dir="rtl"] .demo-oracle-icon {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+}
+
+.film-strip-bg{
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#city-container {
+  height: 600px;
+  width: 600px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.side-text {
+  text-align:center;
+  font-family: Georgia;
+  font-size: 50px;
+  color: black;
+  padding-top:10%;
+}
+
+.side-text-left {
+  margin-left: 50px;      
+}
+
+.side-text-right {
+  margin-right: 50px;      
+}
+
+.button-bar {
+  font-family: Georgia;
+  font-size: 50px;
+  color: white;
+  margin-left: 10%;
+}
+
+.moment-button{
+  font-family: Georgia;
+  font-size: 20px;
+  background-color: #EDEADE;
+  margin-top: 10px;
+  border-radius: 4px;
 }

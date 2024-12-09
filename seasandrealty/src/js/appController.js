@@ -58,11 +58,6 @@ define(['knockout', 'ojs/ojcontext', 'ojs/ojmodule-element-utils', 'ojs/ojrespon
       // User Info used in Global Navigation area
       this.userLogin = ko.observable("john.hancock@oracle.com");
 
-      Bootstrap.whenDocumentReady().then(function () {
-        ko.applyBindings(new ViewModel(),
-            document.getElementById('filmstrip-stretchitems-example'));
-      });
-
       // Footer
       this.footerLinks = [
         {name: 'About Oracle', linkId: 'aboutOracle', linkTarget:'http://www.oracle.com/us/corporate/index.html#menu-about'},

@@ -1,17 +1,24 @@
-  <div class="oj-panel" style="margin: 20px;">
-    <div id="filmStripDiv" style="position: relative; height: 250px;">
+  <div>
+    <div id="filmStripDiv" style="position: relative; height: 800px">
       <oj-film-strip  id="filmStrip" 
           max-items-per-page="1"
           arrow-visibility="hidden"
-          aria-label="Set of chemicals" 
+          aria-label="Set of properties" 
           class="demo-stretch-items"
           data-oj-context>
-        <oj-bind-for-each data="[[chemicals]]">
-          <template data-oj-as="chemical">
-            <div class="oj-panel oj-panel-alt2 demo-filmstrip-item"
-                 :style.display="[[getItemInitialDisplay(chemical.index)]]">
-              <span><oj-bind-text value="[[chemical.data.name]]"></oj-bind-text></span>
-            </div>
+        <oj-bind-for-each data="[[properties]]">
+          <template data-oj-as="property">
+              <div class="demo-filmstrip-item"
+                    :style.display="[[getItemInitialDisplay(property.index)]]">
+                    <div class="film-strip-bg">
+                      <oj-bind-if test="[[property.data.name === 'docker_day']]">
+                        <img src="css/images/docker_day.jpg" alt="docker1" style="max-width: 100%;   height: auto; ">
+                      </oj-bind-if>
+                      <oj-bind-if test="[[property.data.name === 'lobby2']]" >
+                        <img src="css/images/lobby2.jpg" alt="lobby2" style="max-width: 100%;   height: auto; ">
+                      </oj-bind-if>
+                    </div>  
+              </div>
           </template>
         </oj-bind-for-each>
       </oj-film-strip >

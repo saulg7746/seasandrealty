@@ -3,9 +3,112 @@
  Licensed under The Universal Permissive License (UPL), Version 1.0
  as shown at https://oss.oracle.com/licenses/upl/
  -->
-<div class="oj-hybrid-padding">
-  <h1>Dashboard Content Area</h1>
-  <div>
-      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+
+ <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+  <div id="filmstrip-stretchitems-example">
+      <oj-module config="[[ModuleElementUtils.createConfig({name: 'filmStrip/filmStripStretchItems'})]]"></oj-module> 
   </div>
 </div>
+<br>
+
+
+<div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
+  <div class="oj-panel oj-flex-item oj-sm-padding-2x-horizontal side-text side-text-left">Find your <br> new home</div>
+  <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+    <div id="city-container">
+      <img id="city-image" src="css/images/city1.jpg" />
+    </div>
+  </div>
+  <div class="oj-panel oj-flex-item oj-sm-padding-2x-horizontal side-text side-text-right">Beaches<br>Cities<br>Jungles</div>
+</div>
+
+<br>
+
+<div class="oj-flex-bar" style="background-color:#0f223b;">
+  <div class="oj-flex-bar-start button-bar"><div>We create your ideal investment</div></div>
+  <div class="oj-flex-bar-middle oj-sm-justify-content-center">
+    <div>
+    
+    <oj-button id="button1" class="moment-button">
+      <span>The Moment is Now</span>
+    </oj-button>
+
+    </div>
+  </div>
+  <div class="oj-flex-bar-end"><div>end</div></div>
+</div>
+
+<br>
+
+<div id="listviewContainer">
+  <!-- <oj-bind-if test="[[!isSmall()]]">
+    <div class="oj-flex oj-sm-justify-content-flex-end">
+      <oj-buttonset-one
+        display="icons"
+        value="{{activeLayout}}"
+        chroming="borderless"
+        class="oj-flex-item oj-sm-flex-initial oj-buttonset-width-auto"
+        aria-label="Choose layout view.">
+        <oj-bind-for-each data="[[layoutViewRadios]]">
+          <template>
+            <oj-option value="[[$current.data.id]]" :id="[[$current.data.id]]">
+              <span slot="startIcon" :class="[[$current.data.icon]]"></span>
+              <span>
+                <oj-bind-text value="[[$current.data.id]]"></oj-bind-text>
+              </span>
+            </oj-option>
+          </template>
+        </oj-bind-for-each>
+      </oj-buttonset-one>
+    </div>
+  </oj-bind-if> -->
+
+  <div class="demo-card-container" style="height:1000px;">
+    <oj-list-view
+      id="listview"
+      aria-label="list with card layout"
+      data="[[dataProvider]]"
+      display="card"
+      >
+      <template slot="itemTemplate" data-oj-as="item">
+        <!-- template for items -->
+        <li class="demo-card">
+          <oj-action-card>
+            <demo-profile-card-layout
+              name="[[item.item.data.name]]"
+              work-title="[[item.item.data.title]]"
+              initials="[[item.item.data.initials]]"
+              image="[[item.item.data.image]]"></demo-profile-card-layout>
+          </oj-action-card>
+        </li>
+        <!-- <oj-bind-if test="[[activeLayout.peek() == 'list']]">
+          <oj-list-item-layout>
+            <span class="oj-typography-body-md">
+              <oj-bind-text value="[[item.item.data.name]]"></oj-bind-text>
+            </span>
+            <oj-avatar slot="leading" size="xs" src="[[item.item.data.image]]"></oj-avatar>
+            <span slot="secondary" class="oj-typography-body-sm oj-text-color-secondary">
+              <oj-bind-text value="[[item.item.data.title]]"></oj-bind-text>
+            </span>
+          </oj-list-item-layout>
+        </oj-bind-if>
+        <oj-bind-if test="[[activeLayout.peek() == 'card']]">
+          <li class="demo-card">
+            <oj-action-card>
+              <demo-profile-card-layout
+                name="[[item.item.data.name]]"
+                work-title="[[item.item.data.title]]"
+                initials="[[item.item.data.initials]]"
+                image="[[item.item.data.image]]"></demo-profile-card-layout>
+            </oj-action-card>
+          </li>
+        </oj-bind-if> -->
+      </template>
+    </oj-list-view>
+  </div>
+</div>
+
+
+
+
+  
