@@ -73,8 +73,11 @@
           
 
           <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
-            <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
-            <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1>
+            <!-- <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span> -->
+            <div id="top-corner-container">
+              <img id="top-corner-logo-image" src="css/images/logo_gold_no_bg.png" />
+            </div>
+            <!-- <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1> -->
           </div>
           <div class="oj-flex-bar-end">
             <!-- Responsive Toolbar -->
@@ -105,7 +108,7 @@
 
       <oj-module role="main" config="[[moduleAdapter.koObservableConfig]]">
       </oj-module>
-      <footer class="oj-web-applayout-footer" role="contentinfo">
+      <footer class="oj-web-applayout-footer" role="contentinfo"  style="background-color:#0f223b;">
         <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
           <ul>
             <oj-bind-for-each data="[[footerLinks]]">

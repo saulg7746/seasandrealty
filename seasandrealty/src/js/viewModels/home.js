@@ -42,24 +42,24 @@ define(['../accUtils','require', 'exports' , 'knockout', 'ojs/ojcontext', 'ojs/o
         this.rawData = [
           {
               id: 1,
-              name: 'Chris Black',
-              title: 'Oracle Cloud Infrastructure GTM Channel Director EMEA',
+              name: 'Pool Homes',
+              title: 'Own properties with luxury pools',
               phone: 14184556091,
               initials: 'CB',
               image: '../css/images/pool1.jpg'
           },
           {
               id: 2,
-              name: 'Christine Cooper',
-              title: 'Senior Principal Escalation Manager',
+              name: 'Jungle Ambiance',
+              title: 'Enjoy an amazing jungle ambiance',
               phone: 16195668098,
               initials: 'CC',
               image: '../css/images/pool2.jpg'
           },
           {
               id: 3,
-              name: 'Chris Benalamore',
-              title: 'Area Business Operations Director EMEA & JAPAC',
+              name: 'Cottage Core',
+              title: 'Enjoy a cottage core asthetic',
               phone: 16194559090,
               initials: 'CJ',
               image: '../css/images/pool3.jpg'

@@ -40,75 +40,64 @@
 
 <br>
 
-<div id="listviewContainer">
-  <!-- <oj-bind-if test="[[!isSmall()]]">
-    <div class="oj-flex oj-sm-justify-content-flex-end">
-      <oj-buttonset-one
-        display="icons"
-        value="{{activeLayout}}"
-        chroming="borderless"
-        class="oj-flex-item oj-sm-flex-initial oj-buttonset-width-auto"
-        aria-label="Choose layout view.">
-        <oj-bind-for-each data="[[layoutViewRadios]]">
-          <template>
-            <oj-option value="[[$current.data.id]]" :id="[[$current.data.id]]">
-              <span slot="startIcon" :class="[[$current.data.icon]]"></span>
-              <span>
-                <oj-bind-text value="[[$current.data.id]]"></oj-bind-text>
-              </span>
-            </oj-option>
+<div class="oj-flex-bar">
+  <div class="oj-flex-bar-start"></div>
+  <div class="oj-flex-bar-middle oj-sm-justify-content-center">
+    <div id="listviewContainer">
+      <div class="demo-card-container">
+        <oj-list-view
+          id="listview"
+          aria-label="list with card layout"
+          data="[[dataProvider]]"
+          display="card"
+          >
+          <template slot="itemTemplate" data-oj-as="item">
+            <!-- template for items -->
+            <li class="demo-card">
+              <oj-action-card>
+                <demo-profile-card-layout
+                  name="[[item.item.data.name]]"
+                  work-title="[[item.item.data.title]]"
+                  initials="[[item.item.data.initials]]"
+                  image="[[item.item.data.image]]"></demo-profile-card-layout>
+              </oj-action-card>
+            </li>
           </template>
-        </oj-bind-for-each>
-      </oj-buttonset-one>
+        </oj-list-view>
+      </div>
     </div>
-  </oj-bind-if> -->
-
-  <div class="demo-card-container" style="height:1000px;">
-    <oj-list-view
-      id="listview"
-      aria-label="list with card layout"
-      data="[[dataProvider]]"
-      display="card"
-      >
-      <template slot="itemTemplate" data-oj-as="item">
-        <!-- template for items -->
-        <li class="demo-card">
-          <oj-action-card>
-            <demo-profile-card-layout
-              name="[[item.item.data.name]]"
-              work-title="[[item.item.data.title]]"
-              initials="[[item.item.data.initials]]"
-              image="[[item.item.data.image]]"></demo-profile-card-layout>
-          </oj-action-card>
-        </li>
-        <!-- <oj-bind-if test="[[activeLayout.peek() == 'list']]">
-          <oj-list-item-layout>
-            <span class="oj-typography-body-md">
-              <oj-bind-text value="[[item.item.data.name]]"></oj-bind-text>
-            </span>
-            <oj-avatar slot="leading" size="xs" src="[[item.item.data.image]]"></oj-avatar>
-            <span slot="secondary" class="oj-typography-body-sm oj-text-color-secondary">
-              <oj-bind-text value="[[item.item.data.title]]"></oj-bind-text>
-            </span>
-          </oj-list-item-layout>
-        </oj-bind-if>
-        <oj-bind-if test="[[activeLayout.peek() == 'card']]">
-          <li class="demo-card">
-            <oj-action-card>
-              <demo-profile-card-layout
-                name="[[item.item.data.name]]"
-                work-title="[[item.item.data.title]]"
-                initials="[[item.item.data.initials]]"
-                image="[[item.item.data.image]]"></demo-profile-card-layout>
-            </oj-action-card>
-          </li>
-        </oj-bind-if> -->
-      </template>
-    </oj-list-view>
   </div>
+  <div class="oj-flex-bar-end"></div>
 </div>
 
+<div class="oj-flex">
+  <div class="oj-flex-item oj-sm-padding-2x-horizontal"style="text-align:right">
 
+    <div class="oj-flex oj-sm-flex-direction-column">
+      <div class="oj-flex-item oj-sm-padding-2x-horizontal" >
+        <h2>
+          We create the <b>the ideal investment</b><br> for you, let's achieve your dreams <br>and make them <b>reality</b>
+        </h2>
+      </div>
+      <div class="oj-flex-item oj-sm-padding-2x-horizontal">    <p>We are a Mexican 100% family business. Our properties are located in the<br> Mexican Caribbean and the Yucatan Peninsula.<br> We market projects developed by highly experienced Mexican builders, <br>with whom we work together to achieve a positive impact on our Mexican <br>Caribbean and the Yucatan Peninsula, through buildings that accentuate <br>the natural wealth of our Mexico.</p>
+      </div>
+      <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+        <oj-button id="button1" class="moment-button">
+          <span>Learn more</span>
+        </oj-button>
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+    <div id="garden-container">
+      <img id="garden1-image" src="css/images/garden1.jpg" />
+    </div>
+  </div>
+  <!-- <div class="oj-flex-bar-end"></div> -->
+</div>
+<br>
 
 
   
