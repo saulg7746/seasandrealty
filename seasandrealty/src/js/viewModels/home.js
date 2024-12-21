@@ -89,10 +89,10 @@ define(['../accUtils','require', 'exports' , 'knockout', 'ojs/ojcontext', 'ojs/o
       
       
     
-      Bootstrap.whenDocumentReady().then(function () {
-        ko.applyBindings(new ViewModel(),
-            document.getElementById('filmstrip-stretchitems-example'));
-      });
+      // Bootstrap.whenDocumentReady().then(function () {
+      //   ko.applyBindings(new ViewModel(),
+      //       document.getElementById('filmstrip-stretchitems-example'));
+      // });
 
       Bootstrap.whenDocumentReady().then(function () {
         ko.applyBindings(new ViewModel(),

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--see https://github.com/geertjanw/ojet-training/blob/master/README.md-->
 <!--
  Copyright (c) 2014, 2024, Oracle and/or its affiliates.
  Licensed under The Universal Permissive License (UPL), Version 1.0
@@ -66,7 +67,7 @@
          ** and the CSS documentation under Support/API Docs/Non-Component Styling
          ** on the JET website for more information on how to use this pattern.
       -->
-      <header role="banner" class="oj-web-applayout-header">
+      <header role="banner" class="oj-web-applayout-header header-styles">
         
         <div class=" oj-flex-bar oj-sm-align-items-center">
                   
@@ -75,7 +76,7 @@
           <div class="oj-flex-bar-middle oj-sm-align-items-baseline">
             <!-- <span role="img" class="oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span> -->
             <div id="top-corner-container">
-              <img id="top-corner-logo-image" src="css/images/logo_gold_no_bg.png" />
+              <img id="top-corner-logo-image" src="css/images/logo_black_no_bg.png" />
             </div>
             <!-- <h1 class="oj-sm-only-hide oj-web-applayout-header-title" title="Application Name"><oj-bind-text value="[[appName]]"></oj-bind-text></h1> -->
           </div>
@@ -108,6 +109,10 @@
 
       <oj-module role="main" config="[[moduleAdapter.koObservableConfig]]">
       </oj-module>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+      </a>
       <footer class="oj-web-applayout-footer" role="contentinfo"  style="background-color:#0f223b;">
         <div class="oj-web-applayout-footer-item oj-web-applayout-max-width">
           <ul>

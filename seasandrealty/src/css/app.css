@@ -53,6 +53,11 @@ html[dir="rtl"] .demo-oracle-icon {
 }
 
 
+.header-styles{
+  background-color: #27c0d8;
+}
+
+
 /* film strip css */
 
 .demo-filmstrip-item {
@@ -127,6 +132,7 @@ img {
   font-size: 20px;
   background-color: #EDEADE;
   margin-top: 10px;
+  margin-left: 40%;
   border-radius: 4px;
 }
 
@@ -147,4 +153,36 @@ img {
 
 #top-corner-logo-image{
   margin-top: -72px;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+.home-head-container{
+  position: relative;
+  text-align: center;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
