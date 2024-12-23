@@ -8,8 +8,8 @@
 /*
  * Your dashboard ViewModel code goes here
  */
-define(['../accUtils','require', 'exports' , 'knockout', 'ojs/ojcontext', 'ojs/ojmodule-element-utils', 'ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'ojs/ojcorerouter', 'ojs/ojmodulerouter-adapter', 'ojs/ojknockoutrouteradapter', 'ojs/ojurlparamadapter', 'ojs/ojarraydataprovider', 'ojs/ojknockouttemplateutils', 'ojs/ojbootstrap' , 'ojs/ojmodule-element', 'ojs/ojknockout', 'ojs/ojmodule', "ojs/ojbutton", "ojs/ojlistview",  "ojs/ojswitch", "ojs/ojavatar", "ojs/ojlistitemlayout", "ojs/ojactioncard", "jet-composites/demo-profile-card-layout/loader",],
- function(accUtils, require, exports, ko, Context, ModuleElementUtils , ResponsiveUtils, ResponsiveKnockoutUtils, CoreRouter, ModuleRouterAdapter, KnockoutRouterAdapter, UrlParamAdapter, ArrayDataProvider, KnockoutTemplateUtils, Bootstrap) {
+define(['../accUtils','require', 'exports' , 'ojs/ojattributegrouphandler', 'ojs/ojarraytreedataprovider', 'text!../resources/cityStateData.json', 'knockout', 'ojs/ojcontext', 'ojs/ojmodule-element-utils', 'ojs/ojresponsiveutils', 'ojs/ojresponsiveknockoututils', 'ojs/ojcorerouter', 'ojs/ojmodulerouter-adapter', 'ojs/ojknockoutrouteradapter', 'ojs/ojurlparamadapter', 'ojs/ojarraydataprovider', 'ojs/ojknockouttemplateutils', 'ojs/ojbootstrap' , 'ojs/ojmodule-element', 'ojs/ojknockout', 'ojs/ojmodule', "ojs/ojbutton", "ojs/ojlistview",  "ojs/ojswitch", "ojs/ojavatar", "ojs/ojlistitemlayout", "ojs/ojactioncard", "jet-composites/demo-profile-card-layout/loader","ojs/ojsunburst"],
+ function(accUtils, require, exports, ojattributegrouphandler_1, ArrayTreeDataProvider, jsonData, ko, Context, ModuleElementUtils , ResponsiveUtils, ResponsiveKnockoutUtils, CoreRouter, ModuleRouterAdapter, KnockoutRouterAdapter, UrlParamAdapter, ArrayDataProvider, KnockoutTemplateUtils, Bootstrap) {
     function HomeViewModel() {
 
       // Below are a set of the ViewModel methods invoked by the oj-module component.
@@ -38,6 +38,30 @@ define(['../accUtils','require', 'exports' , 'knockout', 'ojs/ojcontext', 'ojs/o
         document.title = "Dashboard";
         // Implement further logic if needed
       };
+
+      this.colorHandler = new ojattributegrouphandler_1.ColorAttributeGroupHandler();
+      this.nodes = JSON.parse(jsonData);
+      this.nodeValues = ko.observableArray(this.nodes);
+      this.sunburstData = new ArrayTreeDataProvider(this.nodeValues, {
+          keyAttributes: 'id',
+          childrenAttribute: 'nodes'
+      });
+
+      this.getValue = () => {
+        return Math.round(50 + 50 * Math.random());
+      };
+      this.getColor = () => {
+          return this.colorHandler.getValue(Math.floor(Math.random() * 4).toString());
+      };
+      this.addColor = (nodes) => {
+          if (!nodes)
+              return;
+          nodes.forEach((node) => {
+              node.color = this.getColor();
+              this.addColor(node.nodes);
+          });
+      };
+      this.addColor(this.nodes);
       
         this.rawData = [
           {
@@ -95,9 +119,16 @@ define(['../accUtils','require', 'exports' , 'knockout', 'ojs/ojcontext', 'ojs/o
       // });
 
       Bootstrap.whenDocumentReady().then(function () {
+        ko.applyBindings(new SunburstModel(),
+            document.getElementById('sunburst-container'));
+      });
+
+      Bootstrap.whenDocumentReady().then(function () {
         ko.applyBindings(new ViewModel(),
             document.getElementById('listviewContainer'));
       });
+
+      
 
       /**
        * Optional ViewModel method invoked after the View is disconnected from the DOM.

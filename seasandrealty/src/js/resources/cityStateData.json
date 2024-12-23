@@ -1,0 +1,41 @@
+[
+    {
+      "label": "Tulum",
+      "id": "0",
+      "value": 87,
+      "nodes": [
+        {
+          "label": "Playa Del Carmen",
+          "id": "00",
+          "value": 93
+        },
+        {
+          "label": "Quinta Avenida",
+          "id": "01",
+          "value": 75
+        },
+        {
+          "label": "Quintana Row",
+          "id": "02",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "label": "Isla Mujeres",
+      "id": "2",
+      "value": 72,
+      "nodes": [
+        {
+          "label": "Playa Norte",
+          "id": "20",
+          "value": 93
+        },
+        {
+          "label": "Punta Sur",
+          "id": "21",
+          "value": 90
+        }
+      ]
+    }
+  ]

@@ -25,18 +25,53 @@
   </div>
 </div>
 
+
 <br><br>
-<div class="oj-flex" :class="[[{'oj-sm-flex-direction-column': dircolumn()}]]">
-  <div class="oj-panel oj-flex-item oj-sm-padding-2x-horizontal side-text side-text-left">Find your <br> new home</div>
+
+<div class="oj-flex">
+
   <div class="oj-flex-item oj-sm-padding-2x-horizontal">
-    <div id="city-container">
-      <img id="city-image" src="css/images/city1.jpg" />
+    <div id="sunburst-container">
+      <oj-sunburst
+        id="sunburst"
+        animation-on-display="auto"
+        animation-on-data-change="auto"
+        data="[[sunburstData]]">
+        <template slot="nodeTemplate">
+          <oj-sunburst-node
+            label="[[$current.data.label]]"
+            value="[[$current.data.value]]"
+            color="[[$current.data.color]]"
+            ></oj-sunburst-node>
+        </template>
+      </oj-sunburst>
     </div>
   </div>
-  <div class="oj-panel oj-flex-item oj-sm-padding-2x-horizontal side-text side-text-right">Beaches<br>Cities<br>Jungles</div>
+
+  <div class="oj-flex-item oj-sm-padding-2x-horizontal" style="text-align:left">
+    
+    <div class="oj-flex oj-sm-flex-direction-column">
+      <div class="oj-flex-item oj-sm-padding-2x-horizontal" >
+        <h2>
+          Find properties in <b>the gorgeous Caribbean </b><br> where we make dreams <br> become a <b>reality</b>
+        </h2>
+      </div>
+      <div class="oj-flex-item oj-sm-padding-2x-horizontal">    
+        <p>We are a Mexican 100% family business. Our properties are located in the<br> Mexican Caribbean and the Yucatan Peninsula.<br> We market projects developed by highly experienced Mexican builders, <br>with whom we work together to achieve a positive impact on our Mexican <br>Caribbean and the Yucatan Peninsula, through buildings that accentuate <br>the natural wealth of our Mexico.</p>
+      </div>
+      <div class="oj-flex-item oj-sm-padding-2x-horizontal">
+        <oj-button id="button1" class="moment-button-2">
+          <span>Learn more</span>
+        </oj-button>
+      </div>
+    </div>
+
+    
+  </div>
 </div>
 
-<br>
+
+
 
 <div class="oj-flex-bar" style="background-color:#0f223b;">
   <div class="oj-flex-bar-start button-bar"><div>We create your ideal investment</div></div>
@@ -109,8 +144,9 @@
       <img id="garden1-image" src="css/images/garden1.jpg" />
     </div>
   </div>
-  <!-- <div class="oj-flex-bar-end"></div> -->
 </div>
+
+
 <br>
 
 
